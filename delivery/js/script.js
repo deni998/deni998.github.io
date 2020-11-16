@@ -1,1 +1,202 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".menu"),t=document.querySelectorAll(".menu__item"),n=document.querySelector(".hamburger"),r=document.querySelectorAll(".slider__item"),o=document.querySelector(".arrow-pred"),c=document.querySelector(".arrow-next");let u=1;function i(e){e>r.length&&(u=1),e<1&&(u=r.length),r.forEach(e=>e.style.display="none"),r[u-1].style.display=""}function l(e){i(u+=e)}i(u),o.addEventListener("click",()=>{l(-1)}),c.addEventListener("click",()=>{l(1)}),n.addEventListener("click",()=>{n.classList.toggle("hamburger_active"),e.classList.toggle("menu_active")}),t.forEach(t=>{t.addEventListener("click",()=>{n.classList.toggle("hamburger_active"),e.classList.toggle("menu_active")})})}),$(document).ready((function(){$(window).scroll((function(){$(this).scrollTop()>1600?$(".pageup").fadeIn():$(".pageup").fadeOut()})),$("a[href^='#']").click((function(){const e=$(this).attr("href");return $("html, body").animate({scrollTop:$(e).offset().top+"px"}),!1}))})),(new WOW).init()}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/script.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/script.js":
+/*!**************************!*\
+  !*** ./src/js/script.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  //slider
+  const menu = document.querySelector('.menu'),
+        menuItem = document.querySelectorAll('.menu__item'),
+        hamburger = document.querySelector('.hamburger'),
+        slides = document.querySelectorAll('.slider__item'),
+        prev = document.querySelector('.arrow-pred'),
+        next = document.querySelector('.arrow-next');
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    slides.forEach(item => item.style.display = 'none');
+    slides[slideIndex - 1].style.display = '';
+  }
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  prev.addEventListener('click', () => {
+    plusSlides(-1);
+  });
+  next.addEventListener('click', () => {
+    plusSlides(1);
+  }); //hamburger
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('hamburger_active');
+    menu.classList.toggle('menu_active');
+  });
+  menuItem.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.toggle('hamburger_active');
+      menu.classList.toggle('menu_active');
+    });
+  });
+});
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+  $("a[href^='#']").click(function () {
+    const _href = $(this).attr("href");
+
+    $("html, body").animate({
+      scrollTop: $(_href).offset().top + "px"
+    });
+    return false;
+  }); //modal
+
+  function modal(triggerSelector, modalSelector, closeSelector) {
+    const trigger = document.querySelector(triggerSelector),
+          modal = document.querySelector(modalSelector),
+          close = document.querySelector(closeSelector);
+    trigger.addEventListener('click', e => {
+      if (e.target) {
+        e.preventDefault();
+      }
+
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+      close.addEventListener('click', () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      });
+    });
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.code === "Escape" && (modal.style.display = `block`)) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
+  modal(".button_nav", ".overlay", ".modal__close");
+  modal(".button_payment", ".overlay", ".modal__close");
+  modal(".button_end", ".overlay", ".modal__close");
+  modal(".button_more", ".overlay", ".modal__close");
+});
+new WOW().init();
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=script.js.map
